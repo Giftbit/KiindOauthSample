@@ -28,8 +28,6 @@ class ConnectWithKiindController {
 
         String connectRedirectString = configBean.kiind_web_userlogin_endpoint + "?" + urlParams
 
-        println(connectRedirectString)
-
         redirect(uri: connectRedirectString )
 
     }
