@@ -61,6 +61,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.0.3"
         compile ':cache:1.1.7'
         compile ":rest-client-builder:2.0.3"
+        compile ":platform-core:1.0.0"
 
 
         // plugins needed at runtime but not for compilation

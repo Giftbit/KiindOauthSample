@@ -7,6 +7,8 @@ class KiindOauthCallbackController {
     def sessionStorageService;
     def configService;
 
+    static navigationScope = 'none'
+
     def index(String code, String state, String error, String error_description) {
 
         if (code) { //user login was successful

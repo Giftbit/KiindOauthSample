@@ -47,8 +47,9 @@ body {
 	        box-shadow: 0 0 0.3em #255b17;
 }
 
-#grailsLogo {
-	background-color: #abbf78;
+
+#kiindLogo {
+	background-color: #3eb0d6;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -83,13 +84,21 @@ ul {
 	padding: 0;
 }
 
+
+
+ul.config {
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+
 img {
 	border: 0;
 }
 
 /* GENERAL */
 
-#grailsLogo a {
+#kiindLogo a {
 	display: inline-block;
 	margin: 1em;
 }
@@ -141,12 +150,14 @@ img {
 	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
 	        box-shadow: 0 0 3px 1px #aaaaaa;
 	zoom: 1;
+    height: 30px;
 }
 
 .nav ul {
 	overflow: hidden;
 	padding-left: 0;
 	zoom: 1;
+
 }
 
 .nav li {
@@ -593,4 +604,9 @@ th:hover, tr:hover {
 a.skip {
 	position: absolute;
 	left: -9999px;
+}
+
+.label {
+    font-weight: bold;
+    padding-right: 5px;
 }
