@@ -17,6 +17,7 @@ class ConfigService {
                 kiind_web_userlogin_endpoint: grailsApplication.config.kiind.webEndpointBase+'/'+grailsApplication.config.kiind.oauthWebLoginEndpoint,
                 kiind_api_token_endpoint: grailsApplication.config.kiind.apiEndpointBase+'/'+grailsApplication.config.kiind.apiTokenEndpoint,
                 kiind_api_credentials_endpoint: grailsApplication.config.kiind.apiEndpointBase,
+                kiind_api_responsetype: grailsApplication.config.kiind.oauth.responsetype
         )
     }
 }

@@ -7,6 +7,7 @@ kiind.apiTokenEndpoint='token/token'
 kiind.oauth.scope='FULLAPI'
 kiind.oauth.granttype.threelegged='authorization_code'
 kiind.oauth.granttype.twolegged='password'
+kiind.oauth.responsetype='code'
 
 
 
@@ -15,8 +16,8 @@ sampleapp.redirectcallback='kiindOauthCallback'
 environments {
     development {
         grails.logging.jul.usebridge = true
-        kiind.apiEndpointBase='https://localhost:8443/v2'
-        kiind.webEndpointBase='https://localhost:8443'
+        kiind.apiEndpointBase='https://localhost:8080/v2'
+        kiind.webEndpointBase='https://localhost:8080'
     }
     production {
         grails.logging.jul.usebridge = false
