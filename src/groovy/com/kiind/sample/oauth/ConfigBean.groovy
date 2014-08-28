@@ -5,5 +5,5 @@ package com.kiind.sample.oauth
  */
 class ConfigBean {
     String scope, grant_type, redirect_url, kiind_web_userlogin_endpoint, kiind_api_token_endpoint,
-    kiind_api_credentials_endpoint, kiind_api_responsetype;
+    kiind_api_credentials_endpoint, kiind_api_responsetype, grant_refresh;
 }

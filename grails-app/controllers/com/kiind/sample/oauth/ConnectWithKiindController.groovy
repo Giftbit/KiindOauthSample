@@ -1,7 +1,13 @@
 package com.kiind.sample.oauth
 
+import grails.converters.JSON
+import groovy.json.JsonOutput
+import org.codehaus.groovy.grails.web.json.JSONElement
+
 class ConnectWithKiindController {
 
+    static navigationScope = 'base'
+    
     def configService
     def sessionStorageService
 

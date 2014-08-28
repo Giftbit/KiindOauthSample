@@ -27,7 +27,7 @@ class KiindOauthCallbackController {
             }
 
             if (jsonResponse.status != 200) {
-                redirect(action: error, params: [error: jsonResponse.json.error.name, error_description: jsonResponse.json.error.message])
+                redirect(action: error, params: [error: jsonResponse.json?.error, error_description: jsonResponse.json?.error_description])
                 return
             }
             String accessToken = jsonResponse.json.access_token
@@ -42,18 +42,20 @@ class KiindOauthCallbackController {
             println jsonResponse.properties
 
             if (jsonResponse.status != 200) {
-                redirect(action: error, params: [error: jsonResponse.json.error.name, error_description: jsonResponse.json.error.message])
+                redirect(action: error, params: [error: jsonResponse.json?.error, error_description: jsonResponse.json?.error_description])
                 return
             }
+
             String connectedUsername = jsonResponse.json.username
+
+            sessionInfoStorageBean.user_refresh = refresh_token
+            sessionInfoStorageBean.user_token = accessToken
+            sessionStorageService.saveNewInfo(session, sessionInfoStorageBean)
 
             return [code: code, connectedUsername: connectedUsername]
         } else {
             redirect(action: 'error', params: [error: error, error_description: error_description])
-
         }
-
-
     }
 
     def error(String error, String error_description) {

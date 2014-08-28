@@ -117,17 +117,27 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+	background: #efefef;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
-	margin-top: 1.5em;
 	padding: 1em;
 	min-height: 1em;
 }
 
 .footer a {
 	color: #255b17;
+}
+
+div.saved {
+    padding: 10px;
+    background: #3eb0d6;
+    color: white;
+    font-weight: bold;
+}
+
+div.maincontent {
+    padding: 25px
 }
 
 .spinner {
@@ -609,4 +619,8 @@ a.skip {
 .label {
     font-weight: bold;
     padding-right: 5px;
+}
+
+.value {
+    word-wrap: break-word;
 }

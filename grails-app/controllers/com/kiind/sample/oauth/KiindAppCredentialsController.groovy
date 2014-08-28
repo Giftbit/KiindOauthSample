@@ -2,6 +2,8 @@ package com.kiind.sample.oauth
 
 class KiindAppCredentialsController {
 
+    static navigationScope = 'base'
+
     def sessionStorageService
 
     def index() {

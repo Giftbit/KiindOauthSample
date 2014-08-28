@@ -26,9 +26,7 @@
 
 </div>
 
-    <nav:primary/>
-
-
+    <nav:menu scope="base"/>
 
 <g:layoutBody/>
 <div class="footer" role="contentinfo">

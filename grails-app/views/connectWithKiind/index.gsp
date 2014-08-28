@@ -6,11 +6,14 @@
 
 
 <body>
-<div class="form">
-    <form action="connect">
-        <g:textField name="state"  value="${state}"/>
+<div class="maincontent">
+    <div class="form">
+        <form action="connect">
+            <span class="label">state:</span>
+            <g:textField name="state"  value="${state}"/>
 
-        <g:submitButton name="Connect" />
-    </form>
+            <g:submitButton name="Connect" />
+        </form>
+    </div>
 </div>
 </body>
