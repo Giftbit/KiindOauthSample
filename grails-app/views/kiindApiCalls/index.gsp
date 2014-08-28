@@ -1,16 +1,13 @@
 <head>
     <title>Call to Kiind</title>
     <meta name="layout" content="main" />
-    <script type="text/javascript" src="../js/renderjson.js"></script>
 </head>
 
 <body>
 <div class="maincontent">
-
-    <div id="json">${raw(json)}</div>
-
-
-    ${json}
+    <pre>
+${json}
+    </pre>
 </div>
 
 <ul class="nav">

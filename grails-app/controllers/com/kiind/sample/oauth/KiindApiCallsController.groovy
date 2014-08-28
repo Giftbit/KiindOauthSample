@@ -30,9 +30,6 @@ class KiindApiCallsController {
         }
 
         String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
-
-        println(jsonOut)
-
         render(view: "index", model: [json: jsonOut])
     }
 
@@ -56,7 +53,8 @@ class KiindApiCallsController {
             return
         }
 
-        render(view: "index", model: [json: jsonResponse.json])
+        String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
+        render(view: "index", model: [json: jsonOut])
     }
 
     def showMarketplace() {
@@ -78,7 +76,8 @@ class KiindApiCallsController {
             return
         }
 
-        render(view: "index", model: [json: jsonResponse.json])
+        String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
+        render(view: "index", model: [json: jsonOut])
     }
 
 
@@ -108,7 +107,8 @@ class KiindApiCallsController {
         sessionInfoStorageBean.user_token = accessToken
         sessionStorageService.saveNewInfo(session, sessionInfoStorageBean)
 
-        render(view: "index", model: [json: jsonResponse.json])
+        String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
+        render(view: "index", model: [json: jsonOut])
     }
 
     def error(String error, String error_description) {

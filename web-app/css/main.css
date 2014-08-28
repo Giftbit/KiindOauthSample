@@ -137,7 +137,8 @@ div.saved {
 }
 
 div.maincontent {
-    padding: 25px
+    padding: 25px;
+    word-wrap: break-word;
 }
 
 .spinner {
