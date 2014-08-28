@@ -14,23 +14,22 @@ class KiindApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String accessToken = sessionInfoStorageBean.user_token
+        String endpoint = configBean.kiind_api_credentials_endpoint
+        String accessToken = sessionInfoStorageBean?.user_token
+        String requestBody = null
+        String method = "GET"
+        String acceptString = "application/json"
+        String contentTypeString = "application/json"
 
         RestBuilder rest = new RestBuilder()
-        def jsonResponse = rest.get(configBean.kiind_api_credentials_endpoint) {
+        def jsonResponse = rest.get(endpoint) {
             header('AUTHORIZATION', accessToken)
-            accept("application/json")
-            contentType("application/json")
-        }
-        println jsonResponse.properties
-
-        if (jsonResponse.status != 200) {
-            redirect(action: error, params: [error: jsonResponse.json?.error?.name, error_description: jsonResponse.json?.error?.message])
-            return
+            accept(acceptString)
+            contentType(contentTypeString)
         }
 
         String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
-        render(view: "index", model: [json: jsonOut])
+        render(view: "index", model: [json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
 
@@ -38,46 +37,44 @@ class KiindApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String accessToken = sessionInfoStorageBean.user_token
+        String endpoint = configBean.kiind_api_credentials_endpoint+"/campaign"
+        String accessToken = sessionInfoStorageBean?.user_token
+        String requestBody = null
+        String method = "GET"
+        String acceptString = "application/json"
+        String contentTypeString = "application/json"
 
         RestBuilder rest = new RestBuilder()
-        def jsonResponse = rest.get(configBean.kiind_api_credentials_endpoint+"/campaign") {
+        def jsonResponse = rest.get(endpoint) {
             header('AUTHORIZATION', accessToken)
-            accept("application/json")
-            contentType("application/json")
-        }
-        println jsonResponse.properties
-
-        if (jsonResponse.status != 200) {
-            redirect(action: error, params: [error: jsonResponse.json?.error?.name, error_description: jsonResponse.json?.error?.message])
-            return
+            accept(acceptString)
+            contentType(contentTypeString)
         }
 
         String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
-        render(view: "index", model: [json: jsonOut])
+        render(view: "index", model: [json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
     def showMarketplace() {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String accessToken = sessionInfoStorageBean.user_token
+        String endpoint = configBean.kiind_api_credentials_endpoint+"/marketplace"
+        String accessToken = sessionInfoStorageBean?.user_token
+        String requestBody = null
+        String method = "GET"
+        String acceptString = "application/json"
+        String contentTypeString = "application/json"
 
         RestBuilder rest = new RestBuilder()
-        def jsonResponse = rest.get(configBean.kiind_api_credentials_endpoint+"/marketplace") {
+        def jsonResponse = rest.get(endpoint) {
             header('AUTHORIZATION', accessToken)
-            accept("application/json")
-            contentType("application/json")
-        }
-        println jsonResponse.properties
-
-        if (jsonResponse.status != 200) {
-            redirect(action: error, params: [error: jsonResponse.json?.error?.name, error_description: jsonResponse.json?.error?.message])
-            return
+            accept(acceptString)
+            contentType(contentTypeString)
         }
 
         String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
-        render(view: "index", model: [json: jsonOut])
+        render(view: "index", model: [json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
 
@@ -85,30 +82,30 @@ class KiindApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String refresh_token = sessionInfoStorageBean.user_refresh
-
-        String requestBody = "grant_type=${configBean.grant_refresh}&client_id=${sessionInfoStorageBean.app_clientid}&client_secret=${sessionInfoStorageBean.app_secret}&refresh_token=${refresh_token.encodeAsURL()}"
+        String refresh_token = sessionInfoStorageBean?.user_refresh
+        String endpoint = configBean.kiind_api_token_endpoint
+        String accessToken = sessionInfoStorageBean?.user_token
+        String requestBody = "grant_type=${configBean?.grant_refresh}&client_id=${sessionInfoStorageBean?.app_clientid?:""}&client_secret=${sessionInfoStorageBean?.app_secret?:""}&refresh_token=${refresh_token?.encodeAsURL()?:""}"
+        String method = "POST"
+        String acceptString = "application/json"
+        String contentTypeString = "application/x-www-form-urlencoded"
 
         RestBuilder rest = new RestBuilder()
-        def jsonResponse = rest.post(configBean.kiind_api_token_endpoint) {
-            accept("application/json")
-            contentType("application/x-www-form-urlencoded")
+        def jsonResponse = rest.post(endpoint) {
+            accept(acceptString)
+            contentType(contentTypeString)
             body(requestBody)
         }
 
-        if (jsonResponse.status != 200) {
-            redirect(action: error, params: [error: jsonResponse.json?.error, error_description: jsonResponse.json?.error_description])
-            return
-        }
-        String accessToken = jsonResponse.json.access_token
-        refresh_token = jsonResponse.json.refresh_token
+        accessToken = jsonResponse.json.access_token ?: sessionInfoStorageBean?.user_token
+        refresh_token = jsonResponse.json.refresh_token ?: sessionInfoStorageBean?.user_refresh
 
-        sessionInfoStorageBean.user_refresh = refresh_token
-        sessionInfoStorageBean.user_token = accessToken
+        sessionInfoStorageBean?.user_refresh = refresh_token
+        sessionInfoStorageBean?.user_token = accessToken
         sessionStorageService.saveNewInfo(session, sessionInfoStorageBean)
 
         String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
-        render(view: "index", model: [json: jsonOut])
+        render(view: "index", model: [json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:null,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
     def error(String error, String error_description) {

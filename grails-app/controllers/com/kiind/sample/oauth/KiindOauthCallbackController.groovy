@@ -1,6 +1,7 @@
 package com.kiind.sample.oauth
 
 import grails.plugins.rest.client.RestBuilder
+import groovy.json.JsonOutput
 
 
 class KiindOauthCallbackController {
@@ -15,44 +16,31 @@ class KiindOauthCallbackController {
             ConfigBean configBean = configService.createConfigBeanFromConfig();
             SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-            String requestBody = "grant_type=${configBean.grant_type}&code=${code}&client_id=${sessionInfoStorageBean.app_clientid}&client_secret=${sessionInfoStorageBean.app_secret}&redirect_uri=${configBean.redirect_url.encodeAsURL()}&scope=${configBean.scope}"
-
-            // Get access_token from authorization code
+            String refresh_token = sessionInfoStorageBean?.user_refresh
+            String endpoint = configBean.kiind_api_token_endpoint
+            String accessToken = sessionInfoStorageBean?.user_token
+            String requestBody = "grant_type=${configBean?.grant_type}&code=${code}&client_id=${sessionInfoStorageBean?.app_clientid}&client_secret=${sessionInfoStorageBean?.app_secret}&redirect_uri=${configBean.redirect_url?.encodeAsURL()}&scope=${configBean.scope}"
+            String method = "POST"
+            String acceptString = "application/json"
+            String contentTypeString = "application/x-www-form-urlencoded"
 
             RestBuilder rest = new RestBuilder()
-            def jsonResponse = rest.post(configBean.kiind_api_token_endpoint) {
-                accept("application/json")
-                contentType("application/x-www-form-urlencoded")
+            def jsonResponse = rest.post(endpoint) {
+                accept(acceptString)
+                contentType(contentTypeString)
                 body(requestBody)
             }
 
-            if (jsonResponse.status != 200) {
-                redirect(action: error, params: [error: jsonResponse.json?.error, error_description: jsonResponse.json?.error_description])
-                return
-            }
-            String accessToken = jsonResponse.json.access_token
-            String refresh_token = jsonResponse.json.refresh_token
+            accessToken = jsonResponse.json.access_token ?: sessionInfoStorageBean?.user_token
+            refresh_token = jsonResponse.json.refresh_token ?: sessionInfoStorageBean?.user_refresh
 
-            //use access token to do a real API call (credentials check)
-            jsonResponse = rest.get(configBean.kiind_api_credentials_endpoint) {
-                header('AUTHORIZATION', accessToken)
-                accept("application/json")
-                contentType("application/json")
-            }
-            println jsonResponse.properties
-
-            if (jsonResponse.status != 200) {
-                redirect(action: error, params: [error: jsonResponse.json?.error, error_description: jsonResponse.json?.error_description])
-                return
-            }
-
-            String connectedUsername = jsonResponse.json.username
-
-            sessionInfoStorageBean.user_refresh = refresh_token
-            sessionInfoStorageBean.user_token = accessToken
+            sessionInfoStorageBean?.user_refresh = refresh_token
+            sessionInfoStorageBean?.user_token = accessToken
             sessionStorageService.saveNewInfo(session, sessionInfoStorageBean)
 
-            return [code: code, connectedUsername: connectedUsername]
+            String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
+            return [code:code, json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:null,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status]
+
         } else {
             redirect(action: 'error', params: [error: error, error_description: error_description])
         }

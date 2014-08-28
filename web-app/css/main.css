@@ -85,7 +85,6 @@ ul {
 }
 
 
-
 ul.config {
     padding-left: 5px;
     list-style-type: none;
@@ -624,4 +623,14 @@ a.skip {
 
 .value {
     word-wrap: break-word;
+}
+
+ul.apiCall {
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+hr.widebreak {
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
