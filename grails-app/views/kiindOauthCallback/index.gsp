@@ -7,7 +7,7 @@
 
 <div class="maincontent">
     <div class="success">
-        Used Authorization code ${code} to get valid API token
+        Attempting to us authorization code ${code} to get valid API token
     </div>
     <hr class="widebreak"/>
 
