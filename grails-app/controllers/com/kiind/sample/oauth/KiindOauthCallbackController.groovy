@@ -31,8 +31,8 @@ class KiindOauthCallbackController {
                 body(requestBody)
             }
 
-            accessToken = jsonResponse.json.access_token ?: sessionInfoStorageBean?.user_token
-            refresh_token = jsonResponse.json.refresh_token ?: sessionInfoStorageBean?.user_refresh
+            accessToken = jsonResponse?.json?.access_token ?: sessionInfoStorageBean?.user_token
+            refresh_token = jsonResponse?.json?.refresh_token ?: sessionInfoStorageBean?.user_refresh
 
             sessionInfoStorageBean?.user_refresh = refresh_token
             sessionInfoStorageBean?.user_token = accessToken
