@@ -33,7 +33,7 @@ class ConnectWithKiindController {
         String urlParams = connectionParams.collect { k,v -> return "${k.encodeAsURL()}=${v.encodeAsURL()}" }.join('&')
 
         String connectRedirectString = configBean.kiind_web_userlogin_endpoint + "?" + urlParams
-
+        println(connectRedirectString)
         redirect(uri: connectRedirectString )
 
     }
