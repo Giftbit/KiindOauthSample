@@ -22,6 +22,12 @@ environments {
         kiind.apiEndpointBase='http://localhost:8080'
         kiind.webEndpointBase='http://localhost:8080'
     }
+
+    testbed {
+        kiind.apiEndpointBase='https://testbed.kiind.me'
+        kiind.webEndpointBase='https://testbed.kiind.me'
+    }
+
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"

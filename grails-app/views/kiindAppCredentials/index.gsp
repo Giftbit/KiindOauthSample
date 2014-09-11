@@ -21,6 +21,7 @@
 
             <g:submitButton name="Save"/>
         </form>
+        <strong>Important:</strong> Be sure to register your Redirect
     </div>
 </div>
 

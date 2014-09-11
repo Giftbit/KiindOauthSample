@@ -29,13 +29,18 @@
 <g:layoutBody/>
 <hr/>
 <div class="footer" role="contentinfo">
+
+    <h3 class="footerheader">Set information:</h3>
+    <div class="credentials">
+        <kiind:displayCurrentCredentials/>
+    </div>
+    <br/>
+    <h3 class="footerheader">Configuration and endpoints:</h3>
     <div class="configinfo">
         <kiind:displayConfig/>
     </div>
 
-    <div class="credentials">
-        <kiind:displayCurrentCredentials/>
-    </div>
+
 </div>
 
 <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
