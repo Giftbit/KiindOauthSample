@@ -56,16 +56,16 @@
 </div>
 
 <ul class="nav">
-    <li>
+    <li class="nextnav buttons">
         <g:link controller="kiindApiCalls" action="index">Credentials Check</g:link>
     </li>
-    <li>
+    <li class="nextnav buttons">
 <g:link controller="kiindApiCalls" action="showCampaigns">List Campaigns</g:link>
     </li>
-    <li>
+    <li class="nextnav buttons">
     <g:link controller="kiindApiCalls" action="showMarketplace">List MarketplaceGift</g:link>
     </li>
-    <li>
+    <li class="nextnav buttons">
         <g:link controller="kiindApiCalls" action="refreshToken">Refresh Token</g:link>
     </li>
 </ul>

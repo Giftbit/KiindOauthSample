@@ -178,6 +178,10 @@ div.maincontent {
 	padding: 0;
 }
 
+.nav li.nextnav {
+    background-color: lightblue;
+}
+
 .nav a {
 	color: #666666;
 	display: block;

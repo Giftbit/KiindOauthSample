@@ -19,14 +19,15 @@
 
 <body>
 
-<div id="kiindLogo" role="banner"><g:link uri="/"> <img
+<div id="kiindLogo" role="banner"><g:link uri="/"><img
         src="${resource(dir: 'images', file: 'kiind-logo.png')}" alt="Kiind"/></g:link>
 
 </div>
 
-    <nav:menu scope="base"/>
+<nav:menu scope="base"/>
 
 <g:layoutBody/>
+<hr/>
 <div class="footer" role="contentinfo">
     <div class="configinfo">
         <kiind:displayConfig/>

@@ -11,7 +11,7 @@
 </div>
 
 <ul class="nav">
-    <li>
+    <li class="nextnav buttons">
         <g:link controller="kiindAppCredentials">Next: Kiind App Credentials</g:link>
     </li>
 </ul>

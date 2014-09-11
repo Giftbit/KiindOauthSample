@@ -62,7 +62,7 @@
 
 
 <ul class="nav">
-    <li>
+    <li class="nextnav buttons">
         <g:link controller="kiindApiCalls">
             Next: Kiind Api Calls
         </g:link>
