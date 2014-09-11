@@ -63,7 +63,10 @@
 
 <ul class="nav">
     <li>
-        <a href="/KiindSampleOAuth/kiindApiCalls/index">Next: Kiind Api Calls</a></li>
+        <g:link controller="kiindApiCalls">
+            Next: Kiind Api Calls
+        </g:link>
+    </li>
 </ul>
 
 </body>

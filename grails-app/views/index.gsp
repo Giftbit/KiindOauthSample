@@ -12,7 +12,7 @@
 
 <ul class="nav">
     <li>
-        <a href="/KiindSampleOAuth/kiindAppCredentials/index">Next: Kiind App Credentials</a>
+        <g:link controller="kiindAppCredentials">Next: Kiind App Credentials</g:link>
     </li>
 </ul>
 </body>

@@ -57,16 +57,16 @@
 
 <ul class="nav">
     <li>
-        <a href="/KiindSampleOAuth/kiindApiCalls/index">Credentials Check</a>
+        <g:link controller="kiindApiCalls" action="index">Credentials Check</g:link>
     </li>
     <li>
-        <a href="/KiindSampleOAuth/kiindApiCalls/showCampaigns">List Campaigns</a>
+<g:link controller="kiindApiCalls" action="showCampaigns">List Campaigns</g:link>
     </li>
     <li>
-        <a href="/KiindSampleOAuth/kiindApiCalls/showMarketplace">List MarketplaceGift</a>
+    <g:link controller="kiindApiCalls" action="showMarketplace">List MarketplaceGift</g:link>
     </li>
     <li>
-        <a href="/KiindSampleOAuth/kiindApiCalls/refreshToken">Refresh Token</a>
+        <g:link controller="kiindApiCalls" action="refreshToken">Refresh Token</g:link>
     </li>
 </ul>
 </body>

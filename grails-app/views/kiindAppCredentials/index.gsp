@@ -27,7 +27,7 @@
 <g:if test="${sessionInfoStorageBean?.app_clientid}">
     <ul class="nav">
         <li>
-            <a href="/KiindSampleOAuth/connectWithKiind/index">Next: Connect With Kiind</a>
+            <g:link controller="connectWithKiind">Next: Connect With Kiind</g:link>
         </li>
     </ul>
 </g:if>
