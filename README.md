@@ -50,10 +50,10 @@ Now you can very easily install grails using the gvm tool:
 gvm install grails 2.3.11
 ```
 
+## Running the app
 
 After cloning this repository, navigate into the root folder and run ```grails run-app```
 
-## Using the app
 
 
 
