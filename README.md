@@ -6,8 +6,7 @@ A sample application that demonstrates allowing your users to connect their Kiin
 
 ## So what is it?
 
-This sample app shows what you need to do to build your application into Kiind.
-It and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve Kiind API and Refresh tokens for your users, and use them to make API calls to Kiind on their behalf.
+This sample app and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve Kiind API and Refresh tokens for your users, and use them to make API calls to Kiind on their behalf.
 
 The Kiind Api uses 3-legged authentication to allow your users to grant you permission to send gifts on their behalf.
 The Kiind Api conforms to the Authorization Code Grant grant type found in the [Oauth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749#section-4.1) specification.
