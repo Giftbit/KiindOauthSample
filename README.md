@@ -17,7 +17,7 @@ You can find documentation for the Kiind gift API [here](http://resources.kiind.
 ## Where do I start?
 
 In order to understand each step in the process, read through the above mentioned Kiind OAuth documentation.
-Once you are familiarized with the concepts and technical underpinnings, ensure you have an account set up on Kiind's testbed platform, and that you have an application registered with your account.
+Once you are familiarized with the concepts and technical underpinnings, ensure you have an account set up on Kiind's testbed platform (see below), and that you have an application registered with your account.
 
 # Setup
 
@@ -25,11 +25,11 @@ Once you are familiarized with the concepts and technical underpinnings, ensure 
 
 The sample app interacts with the Kiind Testbed servers. Having an account on testbed is necessary to make the app work.
 
-You can request a testbed account through the [Kiind Api page](https://www.kiind.me/api). Alternatively, you can email testbed@kiind.me to request testbed access.
+You can request a testbed account [here](http://info.kiind.me/api).
 
 ## Install Grails
 
-The sample app uses grails. You can easily install [Grails](https://grails.org/) through [GVM](http://gvmtool.net/).
+The sample app uses grails 2.3.11 or above (note you will also need Java JDK 1.7 or higher installed if you do not have one). You can easily install [Grails](https://grails.org/) through [GVM](http://gvmtool.net/).
 
 Installing GVM is simple:
 
