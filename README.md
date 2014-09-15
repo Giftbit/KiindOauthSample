@@ -6,7 +6,7 @@ A sample application that demonstrates allowing your users to connect their Kiin
 
 ## So what is it?
 
-This sample app shows what you need to build your into application into Kiind.
+This sample app shows what you need to do to build your into application into Kiind.
 It and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve Kiind API and Refresh tokens for your users, and use them to make API calls to Kiind on their behalf.
 
 The Kiind Api uses 3-legged authentication to allow your users to grant you permission to send gifts on their behalf.
@@ -53,11 +53,3 @@ gvm install grails 2.3.11
 ## Running the app
 
 After cloning this repository, navigate into the root folder and run ```grails run-app```
-
-
-
-
-
-
-
-
