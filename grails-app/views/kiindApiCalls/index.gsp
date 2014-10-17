@@ -53,6 +53,45 @@
         </li>
     </ul>
 
+    <g:if test="${pageform == 'gift_display'}" >
+        <g:form action="getGiftcode" name="gift_details">
+            <hr class="widebreak"/>
+            <span class="label">Gift Details</span>
+            <ul class="apiCall">
+                    <li>
+                        <span class="label">giftcode</span>
+                        <span class="value"><g:textField name="giftcode" valu="${giftcode}" placeholder="Giftcode"/></span>
+                    </li>
+            <li>
+                <span class="label"> </span>
+                <span class="value">
+                    <g:submitButton name="Go"/>
+                </span>
+            </li>
+        </g:form>
+    </g:if>
+    <g:elseif test="${pageform=='gift_redeem'}" >
+        <g:form action="redeemGiftcode" name="gift_redeem" >
+            <hr class="widebreak"/>
+            <span class="label">Gift Redemption</span>
+            <ul class="apiCall">
+                    <li>
+                        <span class="label">giftcode</span>
+                        <span class="value"><g:textField name="giftcode" valu="${giftcode}" placeholder="Giftcode"/></span>
+                    </li>
+                <li>
+                    <span class="label">giftcode</span>
+                    <span class="value"><g:textField type="number" name="amount_to_redeem_in_cents" valu="${amount_to_redeem_in_cents}" placeholder="Amount to Redeem in cents"/></span>
+                </li>
+                    <li>
+                <span class="label"> </span>
+                <span class="value">
+                    <g:submitButton name="Go"/>
+                </span>
+            </li>
+        </g:form>
+    </g:elseif>
+
 </div>
 
 <ul class="nav">
@@ -67,6 +106,12 @@
     </li>
     <li class="nextnav buttons">
         <g:link controller="kiindApiCalls" action="refreshToken">Refresh Token</g:link>
+    </li>
+    <li class="nextnav buttons">
+        <g:link controller="kiindApiCalls" action="getGiftcode">Gift Details</g:link>
+    </li>
+    <li class="nextnav buttons">
+        <g:link controller="kiindApiCalls" action="redeemGiftcode">Redeem Gift</g:link>
     </li>
 </ul>
 </body>

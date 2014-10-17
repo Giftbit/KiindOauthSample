@@ -14,7 +14,7 @@ class KiindApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = configBean.kiind_api_credentials_endpoint
+        String endpoint = sessionInfoStorageBean.scope == "PAYMENT" ? configBean.kiind_api_payment_endpoint : configBean.kiind_api_gift_endpoint
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"
@@ -32,12 +32,58 @@ class KiindApiCallsController {
         render(view: "index", model: [json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
+    def getGiftcode(String giftcode) {
+        ConfigBean configBean = configService.createConfigBeanFromConfig();
+        SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
+
+        String endpoint = configBean.kiind_api_payment_endpoint+"gift/"+(giftcode?:"")
+        String accessToken = sessionInfoStorageBean?.user_token
+        String requestBody = null
+        String method = "GET"
+        String acceptString = "application/json"
+        String contentTypeString = "application/json"
+        String pageform = "gift_display"
+
+        RestBuilder rest = new RestBuilder()
+        def jsonResponse = rest.get(endpoint) {
+            header('AUTHORIZATION', accessToken)
+            accept(acceptString)
+            contentType(contentTypeString)
+        }
+
+        String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
+        render(view: "index", model: [pageform:pageform, giftcode:giftcode, json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
+    }
+
+    def redeemGiftcode(String giftcode, Long amount_to_redeem_in_cents) {
+        ConfigBean configBean = configService.createConfigBeanFromConfig();
+        SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
+
+        String endpoint = configBean.kiind_api_payment_endpoint+"gift/"+(giftcode?:"")
+        String accessToken = sessionInfoStorageBean?.user_token
+        String requestBody = null
+        String method = "PUT"
+        String acceptString = "application/json"
+        String contentTypeString = "application/json"
+        String pageform = "gift_redeem"
+
+        RestBuilder rest = new RestBuilder()
+        def jsonResponse = rest.get(endpoint) {
+            header('AUTHORIZATION', accessToken)
+            accept(acceptString)
+            contentType(contentTypeString)
+        }
+
+        String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
+        render(view: "index", model: [pageform:pageform, amount_to_redeem_in_cents:amount_to_redeem_in_cents, giftcode:giftcode, json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
+    }
+
 
     def showCampaigns() {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = configBean.kiind_api_credentials_endpoint+"/campaign"
+        String endpoint = configBean.kiind_api_gift_endpoint+"/campaign"
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"
@@ -59,7 +105,7 @@ class KiindApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = configBean.kiind_api_credentials_endpoint+"/marketplace"
+        String endpoint = configBean.kiind_api_gift_endpoint+"/marketplace"
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"

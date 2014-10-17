@@ -26,7 +26,7 @@ class ConnectWithKiindController {
         Map connectionParams = [
                 client_id    : sessionInfo.app_clientid,
                 response_type: "code",
-                scope        : configBean.scope,
+                scope        : sessionInfo.scope,
                 redirect_uri : configBean.redirect_url,
                 state        : state,
         ]

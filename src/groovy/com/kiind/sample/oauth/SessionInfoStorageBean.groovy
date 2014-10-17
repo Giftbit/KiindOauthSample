@@ -5,5 +5,6 @@ package com.kiind.sample.oauth
  */
 class SessionInfoStorageBean {
     String app_clientid, app_secret;
-    String user_token, user_refresh
+    String user_token, user_refresh;
+    String scope;
 }

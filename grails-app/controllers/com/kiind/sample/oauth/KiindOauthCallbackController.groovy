@@ -19,7 +19,7 @@ class KiindOauthCallbackController {
             String refresh_token = sessionInfoStorageBean?.user_refresh
             String endpoint = configBean.kiind_api_token_endpoint
             String accessToken = sessionInfoStorageBean?.user_token
-            String requestBody = "grant_type=${configBean?.grant_type}&code=${code}&client_id=${sessionInfoStorageBean?.app_clientid}&client_secret=${sessionInfoStorageBean?.app_secret}&redirect_uri=${configBean.redirect_url?.encodeAsURL()}&scope=${configBean.scope}"
+            String requestBody = "grant_type=${configBean?.grant_type}&code=${code}&client_id=${sessionInfoStorageBean?.app_clientid}&client_secret=${sessionInfoStorageBean?.app_secret}&redirect_uri=${configBean.redirect_url?.encodeAsURL()}&scope=${sessionInfoStorageBean.scope}"
             String method = "POST"
             String acceptString = "application/json"
             String contentTypeString = "application/x-www-form-urlencoded"

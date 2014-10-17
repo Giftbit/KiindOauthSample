@@ -19,6 +19,8 @@
             <span class="label">client_secret:</span>
             <g:textField name="app_secret" value="${sessionInfoStorageBean?.app_secret}"/>
 
+            <g:select name="scope" from="${configBean.scopes}" />
+
             <g:submitButton name="Save"/>
         </form>
     </div>
