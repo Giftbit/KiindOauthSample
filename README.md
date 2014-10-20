@@ -6,8 +6,7 @@ A sample application that demonstrates allowing your users to connect their Kiin
 
 ## So what is it?
 
-This sample app shows what you need to build your into application into Kiind.
-It and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve Kiind API and Refresh tokens for your users, and use them to make API calls to Kiind on their behalf.
+This sample app and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve Kiind API and Refresh tokens for your users, and use them to make API calls to Kiind on their behalf.
 
 The Kiind Api uses 3-legged authentication to allow your users to grant you permission to send gifts on their behalf.
 The Kiind Api conforms to the Authorization Code Grant grant type found in the [Oauth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749#section-4.1) specification.
@@ -18,7 +17,7 @@ You can find documentation for the Kiind gift API [here](http://resources.kiind.
 ## Where do I start?
 
 In order to understand each step in the process, read through the above mentioned Kiind OAuth documentation.
-Once you are familiarized with the concepts and technical underpinnings, ensure you have an account set up on Kiind's testbed platform, and that you have an application registered with your account.
+Once you are familiarized with the concepts and technical underpinnings, ensure you have an account set up on Kiind's testbed platform (see below), and that you have an application registered with your account.
 
 # Setup
 
@@ -26,11 +25,11 @@ Once you are familiarized with the concepts and technical underpinnings, ensure 
 
 The sample app interacts with the Kiind Testbed servers. Having an account on testbed is necessary to make the app work.
 
-You can request a testbed account through the [Kiind Api page](https://www.kiind.me/api). Alternatively, you can email testbed@kiind.me to request testbed access.
+You can request a testbed account [here](http://info.kiind.me/api).
 
 ## Install Grails
 
-The sample app uses grails. You can easily install [Grails](https://grails.org/) through [GVM](http://gvmtool.net/).
+The sample app uses grails 2.3.11 or above (note you will also need Java JDK 1.7 or higher installed if you do not have one). You can easily install [Grails](https://grails.org/) through [GVM](http://gvmtool.net/).
 
 Installing GVM is simple:
 
@@ -54,10 +53,10 @@ gvm install grails 2.3.11
 
 After cloning this repository, navigate into the root folder and run ```grails run-app```
 
+The first time you run it it may take a while to download all the dependencies, but subsequent startups should be very fast.  Assuming everything goes well, you'll see a bit of output ending with
+```Server running. Browse to http://localhost:8080/KiindSampleOAuth```
 
+Browse to the URL, and follow the in application instructions.
 
-
-
-
-
-
+**Note:** if you need to use a port other than 8080 to keep that port open for another local server, you may specify it as part of the run command  
+```grails run-app -Dserver.port=<your port>```
