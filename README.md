@@ -11,11 +11,11 @@ This sample app and its code can be used as a working reference for each step th
 The Kiind Api uses 3-legged authentication to allow your users to grant you permission to send or accept gifts on their behalf.
 It conforms to the [Oauth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749) specification and supports several of the grant type flows.
 
-Documentation specifically for the Kiind OAuth interface can be found [here](http://resources.kiind.me/api/KiindOauth-latest.pdf) .
+Documentation specifically for the Kiind OAuth interface can be found at [http://resources.kiind.me/api/KiindOauth-latest.pdf] .
 
 To use your OAuth acquired tokens:
-If you building the sending of gifts into your application, you can find documentation for the Kiind gift API [http://resources.kiind.me/api/KiindPartnersAPI-latest.pdf]
-If you are accepting Giftbit gifts in your checkout/point of sale, you can find the Giftbit Payment API documentation [http://resources.kiind.me/api/GiftbitPaymentAPI-latest.pdf](http://resources.kiind.me/api/GiftbitPaymentAPI-latest.pdf)
+If you building the sending of gifts into your application, you can find documentation for the Kiind gift API at [http://resources.kiind.me/api/KiindPartnersAPI-latest.pdf]
+If you are accepting Giftbit gifts in your checkout/point of sale, you can find the Giftbit Payment API documentation [http://resources.kiind.me/api/GiftbitPaymentAPI-latest.pdf]
 
 ## Where do I start?
 
