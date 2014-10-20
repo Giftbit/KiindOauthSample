@@ -80,7 +80,7 @@
                         <span class="value"><g:textField name="giftcode" valu="${giftcode}" placeholder="Giftcode"/></span>
                     </li>
                 <li>
-                    <span class="label">giftcode</span>
+                    <span class="label">amount</span>
                     <span class="value"><g:textField type="number" name="amount_to_redeem_in_cents" valu="${amount_to_redeem_in_cents}" placeholder="Amount to Redeem in cents"/></span>
                 </li>
                     <li>
