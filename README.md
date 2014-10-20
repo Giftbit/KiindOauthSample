@@ -1,18 +1,21 @@
 OAuth-Example-Grails
 ====================
 
-A sample application that demonstrates allowing your users to connect their Kiind accounts to your application via Kiind's OAuth 2.0 endpoints
+A sample application that demonstrates allowing your users to connect their Kiind or Giftbit accounts to your application via Kiind's OAuth 2.0 endpoints
 
 
 ## So what is it?
 
-This sample app and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve Kiind API and Refresh tokens for your users, and use them to make API calls to Kiind on their behalf.
+This sample app and its code can be used as a working reference for each step that you will need to implement in your application to securely retrieve API and Refresh tokens for your users, and use them to make API calls to on their behalf.
 
-The Kiind Api uses 3-legged authentication to allow your users to grant you permission to send gifts on their behalf.
-The Kiind Api conforms to the Authorization Code Grant grant type found in the [Oauth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749#section-4.1) specification.
+The Kiind Api uses 3-legged authentication to allow your users to grant you permission to send or accept gifts on their behalf.
+It conforms to the [Oauth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749) specification and supports several of the grant type flows.
+
 Documentation specifically for the Kiind OAuth interface can be found [here](http://resources.kiind.me/api/KiindOauth-latest.pdf) .
 
-You can find documentation for the Kiind gift API [here](http://resources.kiind.me/api/KiindPartnersAPI-latest.pdf)
+To use your OAuth acquired tokens:
+If you building the sending of gifts into your application, you can find documentation for the Kiind gift API [http://resources.kiind.me/api/KiindPartnersAPI-latest.pdf]
+If you are accepting Giftbit gifts in your checkout/point of sale, you can find the Giftbit Payment API documentation [http://resources.kiind.me/api/GiftbitPaymentAPI-latest.pdf](http://resources.kiind.me/api/GiftbitPaymentAPI-latest.pdf)
 
 ## Where do I start?
 
