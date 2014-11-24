@@ -59,7 +59,8 @@ After cloning this repository, navigate into the root folder and run ```grails r
 The first time you run it it may take a while to download all the dependencies, but subsequent startups should be very fast.  Assuming everything goes well, you'll see a bit of output ending with
 ```Server running. Browse to http://localhost:8080/KiindSampleOAuth```
 
-Browse to the URL, and follow the in application instructions.
+Browse to the URL, replace the localhost with the IP address of your local machine (you can find your IP address using ifconfig command in the terminal; for my machine for example, the URL becomes:192.168.0.27:8080/KiindSampleOAuth/), and then follow the application instructions. 
+
 
 **Note:** if you need to use a port other than 8080 to keep that port open for another local server, you may specify it as part of the run command  
 ```grails run-app -Dserver.port=<your port>```

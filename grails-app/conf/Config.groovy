@@ -20,8 +20,8 @@ sampleapp.redirectcallback='kiindOauthCallback'
 environments {
     development {
         grails.logging.jul.usebridge = true
-        kiind.apiEndpointBase='http://localhost:8080'
-        kiind.webEndpointBase='http://localhost:8080'
+        kiind.apiEndpointBase='https://www.kiind.me'
+        kiind.webEndpointBase='https://www.kiind.me'
     }
 
     testbed {

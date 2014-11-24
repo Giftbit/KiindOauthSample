@@ -76,13 +76,17 @@
             <span class="label">Gift Redemption</span>
             <ul class="apiCall">
                     <li>
-                        <span class="label">giftcode</span>
-                        <span class="value"><g:textField name="giftcode" valu="${giftcode}" placeholder="Giftcode"/></span>
+                        <span class="label">Giftcode</span>
+                        <span class="value"><g:textField name="giftcode" value="${giftcode}" placeholder="Giftcode"/></span>
                     </li>
                 <li>
-                    <span class="label">amount</span>
-                    <span class="value"><g:textField type="number" name="amount_to_redeem_in_cents" valu="${amount_to_redeem_in_cents}" placeholder="Amount to Redeem in cents"/></span>
+                    <span class="label">Amount</span>
+                    <span class="value"><g:textField type="number" name="amount_to_redeem_in_cents" value="${amount_to_redeem_in_cents}" placeholder="Amount to Redeem in cents"/></span>
                 </li>
+                 <li>
+                     <span class="label">Transaction Id (Leave blank to use current time)</span>
+                     <span class="value"><g:textField type="text" name="transaction_id" value="${transaction_id}" placeholder="Unique transaction Id"/></span>
+                 </li>
                     <li>
                 <span class="label"> </span>
                 <span class="value">

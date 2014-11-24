@@ -55,11 +55,11 @@ class KiindApiCallsController {
         render(view: "index", model: [pageform:pageform, giftcode:giftcode, json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
-    def redeemGiftcode(String giftcode, Long amount_to_redeem_in_cents) {
+    def redeemGiftcode(String giftcode, Long amount_to_redeem_in_cents, Long transaction_id) {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
-
-        String endpoint = configBean.kiind_api_payment_endpoint+"gift/"+(giftcode?:"")
+        transaction_id = transaction_id ?: Calendar.getInstance().getTimeInMillis()
+        String endpoint = configBean.kiind_api_payment_endpoint+"gift/"+(giftcode?:"")+"?amount_in_cents=${amount_to_redeem_in_cents}&transaction_id=${transaction_id}"
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "PUT"
@@ -67,15 +67,17 @@ class KiindApiCallsController {
         String contentTypeString = "application/json"
         String pageform = "gift_redeem"
 
+
+
         RestBuilder rest = new RestBuilder()
-        def jsonResponse = rest.get(endpoint) {
+        def jsonResponse = rest.put(endpoint) {
             header('AUTHORIZATION', accessToken)
             accept(acceptString)
             contentType(contentTypeString)
         }
 
         String jsonOut = JsonOutput.prettyPrint(jsonResponse.json.toString())
-        render(view: "index", model: [pageform:pageform, amount_to_redeem_in_cents:amount_to_redeem_in_cents, giftcode:giftcode, json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
+        render(view: "index", model: [pageform:pageform, transaction_id:transaction_id, amount_to_redeem_in_cents:amount_to_redeem_in_cents, giftcode:giftcode, json: jsonOut, endpoint: endpoint, method:method, body: requestBody, header:'AUTHORIZATION: '+accessToken,accept:acceptString, contentType:contentTypeString, status:jsonResponse.status])
     }
 
 
