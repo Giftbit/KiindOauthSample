@@ -11,6 +11,8 @@
 
 <div class="maincontent">
 
+    These values are always available in your Kiind account developer portal
+
     <div class="form">
         <form action="save">
             <span class="label">client_id:</span>

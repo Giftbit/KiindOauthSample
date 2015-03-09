@@ -13,7 +13,7 @@ class ConnectWithKiindController {
 
     def index() {
 
-        String state = "hashedUserState"
+        String state = "optionalStateThatWillBeEchoedBack"
 
         return [state: state]
     }

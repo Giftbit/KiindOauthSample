@@ -9,7 +9,7 @@
     <div class="form">
         <form action="connect">
             <span class="label">state:</span>
-            <g:textField name="state" value="${state}"/>
+            <g:textField name="state" value="${state}" size="50"/>
 
             <g:submitButton name="Connect"/>
             <h3>Important</h3>
