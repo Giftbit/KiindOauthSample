@@ -7,9 +7,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><g:layoutTitle default="Kiind Oauth sample app"/></title>
+    <title><g:layoutTitle default="Giftbit Oauth sample app"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}?v=2" type="image/x-icon">
+    <link rel="shortcut icon" href="${resource(dir: 'images', file: 'giftbit-favicon.png')}?v=2" type="image/x-icon">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
     <g:layoutHead/>
@@ -20,7 +20,7 @@
 <body>
 
 <div id="kiindLogo" role="banner"><g:link uri="/"><img
-        src="${resource(dir: 'images', file: 'kiind-logo.png')}" alt="Kiind"/></g:link>
+        src="${resource(dir: 'images', file: 'giftbit.png')}" width="150px" alt="Giftbit"/></g:link>
 
 </div>
 

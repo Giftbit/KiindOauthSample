@@ -3,7 +3,7 @@ package com.kiind.sample.oauth
 import grails.plugins.rest.client.RestBuilder
 import groovy.json.JsonOutput
 
-class KiindApiCallsController {
+class GiftbitApiCallsController {
 
     static navigationScope = 'base'
 

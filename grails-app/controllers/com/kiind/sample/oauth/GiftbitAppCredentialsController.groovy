@@ -1,6 +1,6 @@
 package com.kiind.sample.oauth
 
-class KiindAppCredentialsController {
+class GiftbitAppCredentialsController {
 
     static navigationScope = 'base'
 

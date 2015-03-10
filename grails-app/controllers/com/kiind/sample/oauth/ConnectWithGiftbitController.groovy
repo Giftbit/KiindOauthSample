@@ -4,7 +4,7 @@ import grails.converters.JSON
 import groovy.json.JsonOutput
 import org.codehaus.groovy.grails.web.json.JSONElement
 
-class ConnectWithKiindController {
+class ConnectWithGiftbitController {
 
     static navigationScope = 'base'
     

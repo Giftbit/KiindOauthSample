@@ -4,7 +4,7 @@ import grails.plugins.rest.client.RestBuilder
 import groovy.json.JsonOutput
 
 
-class KiindOauthCallbackController {
+class GiftbitOauthCallbackController {
     def sessionStorageService;
     def configService;
 

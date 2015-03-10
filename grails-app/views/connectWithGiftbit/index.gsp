@@ -1,5 +1,5 @@
 <head>
-    <title>Connect to Kiind</title>
+    <title>Connect to Giftbit</title>
     <meta name="layout" content="main"/>
 </head>
 
@@ -20,7 +20,7 @@
             <br/>
 
             <p>
-                'Connect' will redirect you to Kiind's testbed site.  You can use your own application's testbed account credentials to authenticate for testing purposes, or to simulate a more realistic situation, you can create
+                'Connect' will redirect you to Giftbit's testbed site.  You can use your own application's testbed account credentials to authenticate for testing purposes, or to simulate a more realistic situation, you can create
                 a secondary account on testbed to simulate one of your users authorizing your application to gift on their behalf.
             </p>
 

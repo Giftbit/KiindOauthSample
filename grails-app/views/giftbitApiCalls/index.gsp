@@ -1,5 +1,5 @@
 <head>
-    <title>Call to Kiind</title>
+    <title>Call to Giftbit</title>
     <meta name="layout" content="main"/>
 </head>
 
@@ -100,22 +100,22 @@
 
 <ul class="nav">
     <li class="nextnav buttons">
-        <g:link controller="kiindApiCalls" action="index">Credentials Check</g:link>
+        <g:link controller="giftbitApiCalls" action="index">Credentials Check</g:link>
     </li>
     <li class="nextnav buttons">
-<g:link controller="kiindApiCalls" action="showCampaigns">List Campaigns</g:link>
+<g:link controller="giftbitApiCalls" action="showCampaigns">List Campaigns</g:link>
     </li>
     <li class="nextnav buttons">
-    <g:link controller="kiindApiCalls" action="showMarketplace">List MarketplaceGift</g:link>
+    <g:link controller="giftbitApiCalls" action="showMarketplace">List MarketplaceGift</g:link>
     </li>
     <li class="nextnav buttons">
-        <g:link controller="kiindApiCalls" action="refreshToken">Refresh Token</g:link>
+        <g:link controller="giftbitApiCalls" action="refreshToken">Refresh Token</g:link>
     </li>
     <li class="nextnav buttons">
-        <g:link controller="kiindApiCalls" action="getGiftcode">Gift Details</g:link>
+        <g:link controller="giftbitApiCalls" action="getGiftcode">Gift Details</g:link>
     </li>
     <li class="nextnav buttons">
-        <g:link controller="kiindApiCalls" action="redeemGiftcode">Redeem Gift</g:link>
+        <g:link controller="giftbitApiCalls" action="redeemGiftcode">Redeem Gift</g:link>
     </li>
 </ul>
 </body>

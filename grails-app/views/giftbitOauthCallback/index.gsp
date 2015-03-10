@@ -63,8 +63,8 @@
 
 <ul class="nav">
     <li class="nextnav buttons">
-        <g:link controller="kiindApiCalls">
-            Next: Kiind Api Calls
+        <g:link controller="giftbitApiCalls">
+            Next: Giftbit Api Calls
         </g:link>
     </li>
 </ul>

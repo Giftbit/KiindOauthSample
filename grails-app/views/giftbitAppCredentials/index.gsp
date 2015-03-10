@@ -11,7 +11,7 @@
 
 <div class="maincontent">
 
-    These values are always available in your Kiind account developer portal
+    These values are always available in your Giftbit account developer portal
 
     <div class="form">
         <form action="save">
@@ -31,7 +31,7 @@
 <g:if test="${sessionInfoStorageBean?.app_clientid}">
     <ul class="nav">
         <li class="nextnav buttons">
-            <g:link controller="connectWithKiind">Next: Connect With Kiind</g:link>
+            <g:link controller="connectWithGiftbit">Next: Connect With Giftbit</g:link>
         </li>
     </ul>
 </g:if>
