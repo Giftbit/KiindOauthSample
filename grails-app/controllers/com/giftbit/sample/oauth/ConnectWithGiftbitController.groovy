@@ -1,8 +1,4 @@
-package com.kiind.sample.oauth
-
-import grails.converters.JSON
-import groovy.json.JsonOutput
-import org.codehaus.groovy.grails.web.json.JSONElement
+package com.giftbit.sample.oauth
 
 class ConnectWithGiftbitController {
 
@@ -32,7 +28,7 @@ class ConnectWithGiftbitController {
         ]
         String urlParams = connectionParams.collect { k,v -> return "${k.encodeAsURL()}=${v.encodeAsURL()}" }.join('&')
 
-        String connectRedirectString = configBean.kiind_web_userlogin_endpoint + "?" + urlParams
+        String connectRedirectString = configBean.giftbit_web_userlogin_endpoint + "?" + urlParams
         println(connectRedirectString)
         redirect(uri: connectRedirectString )
 

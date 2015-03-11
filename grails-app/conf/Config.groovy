@@ -15,7 +15,7 @@ kiind.oauth.responsetype='code'
 
 
 
-sampleapp.redirectcallback='kiindOauthCallback'
+sampleapp.redirectcallback='giftbitOauthCallback'
 
 environments {
     development {

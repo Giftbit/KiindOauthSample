@@ -1,4 +1,4 @@
-package com.kiind.sample.oauth
+package com.giftbit.sample.oauth
 
 import grails.plugins.rest.client.RestBuilder
 import groovy.json.JsonOutput
@@ -14,7 +14,7 @@ class GiftbitApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = sessionInfoStorageBean.scope == "PAYMENT" ? configBean.kiind_api_payment_endpoint : configBean.kiind_api_gift_endpoint
+        String endpoint = sessionInfoStorageBean.scope == "PAYMENT" ? configBean.giftbit_api_payment_endpoint : configBean.giftbit_api_gift_endpoint
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"
@@ -36,7 +36,7 @@ class GiftbitApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = configBean.kiind_api_payment_endpoint+"gift/"+(giftcode?:"")
+        String endpoint = configBean.giftbit_api_payment_endpoint+"gift/"+(giftcode?:"")
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"
@@ -59,7 +59,7 @@ class GiftbitApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
         transaction_id = transaction_id ?: Calendar.getInstance().getTimeInMillis()
-        String endpoint = configBean.kiind_api_payment_endpoint+"gift/"+(giftcode?:"")+"?amount_in_cents=${amount_to_redeem_in_cents}&transaction_id=${transaction_id}"
+        String endpoint = configBean.giftbit_api_payment_endpoint+"gift/"+(giftcode?:"")+"?amount_in_cents=${amount_to_redeem_in_cents}&transaction_id=${transaction_id}"
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "PUT"
@@ -85,7 +85,7 @@ class GiftbitApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = configBean.kiind_api_gift_endpoint+"/campaign"
+        String endpoint = configBean.giftbit_api_gift_endpoint+"/campaign"
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"
@@ -107,7 +107,7 @@ class GiftbitApiCallsController {
         ConfigBean configBean = configService.createConfigBeanFromConfig();
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
-        String endpoint = configBean.kiind_api_gift_endpoint+"/marketplace"
+        String endpoint = configBean.giftbit_api_gift_endpoint+"/marketplace"
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = null
         String method = "GET"
@@ -131,7 +131,7 @@ class GiftbitApiCallsController {
         SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
         String refresh_token = sessionInfoStorageBean?.user_refresh
-        String endpoint = configBean.kiind_api_token_endpoint
+        String endpoint = configBean.giftbit_api_token_endpoint
         String accessToken = sessionInfoStorageBean?.user_token
         String requestBody = "grant_type=${configBean?.grant_refresh}&client_id=${sessionInfoStorageBean?.app_clientid?:""}&client_secret=${sessionInfoStorageBean?.app_secret?:""}&refresh_token=${refresh_token?.encodeAsURL()?:""}"
         String method = "POST"

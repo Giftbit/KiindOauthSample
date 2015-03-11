@@ -1,4 +1,4 @@
-package com.kiind.sample.oauth
+package com.giftbit.sample.oauth
 
 /**
  * Created by plocke on 2014-08-26.

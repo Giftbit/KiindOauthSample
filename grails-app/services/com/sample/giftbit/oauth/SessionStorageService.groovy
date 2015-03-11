@@ -1,7 +1,6 @@
-package com.sample.kiind.oauth
+package com.sample.giftbit.oauth
 
-import com.kiind.sample.oauth.SessionInfoStorageBean
-import grails.transaction.Transactional
+import com.giftbit.sample.oauth.SessionInfoStorageBean
 
 import javax.servlet.http.HttpSession
 

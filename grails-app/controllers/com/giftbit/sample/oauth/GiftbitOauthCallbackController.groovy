@@ -1,4 +1,4 @@
-package com.kiind.sample.oauth
+package com.giftbit.sample.oauth
 
 import grails.plugins.rest.client.RestBuilder
 import groovy.json.JsonOutput
@@ -17,7 +17,7 @@ class GiftbitOauthCallbackController {
             SessionInfoStorageBean sessionInfoStorageBean = sessionStorageService.getSavedInfo(session)
 
             String refresh_token = sessionInfoStorageBean?.user_refresh
-            String endpoint = configBean.kiind_api_token_endpoint
+            String endpoint = configBean.giftbit_api_token_endpoint
             String accessToken = sessionInfoStorageBean?.user_token
             String requestBody = "grant_type=${configBean?.grant_type}&code=${code}&client_id=${sessionInfoStorageBean?.app_clientid}&client_secret=${sessionInfoStorageBean?.app_secret}&redirect_uri=${configBean.redirect_url?.encodeAsURL()}&scope=${sessionInfoStorageBean.scope}"
             String method = "POST"

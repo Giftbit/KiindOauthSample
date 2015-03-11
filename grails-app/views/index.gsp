@@ -15,7 +15,7 @@
     <h3>Where do I start?</h3>
 
     <p>In order to understand each step in the process,
-    read through the <a href="http://resources.kiind.me/api/GiftbitOauth-latest.pdf">Giftbit OAuth documentation</a>.
+    read through the <a href="http://resources.giftbit.com/api/GiftbitOauth-latest.pdf">Giftbit OAuth documentation</a>.
     </p>
 
     <p>

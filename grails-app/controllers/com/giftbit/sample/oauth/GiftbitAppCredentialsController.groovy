@@ -1,4 +1,4 @@
-package com.kiind.sample.oauth
+package com.giftbit.sample.oauth
 
 class GiftbitAppCredentialsController {
 
