@@ -35,12 +35,6 @@ environments {
         kiind.webEndpointBase='https://preprodapp.giftbit.com'
     }
 
-
-    mockapp {
-        kiind.apiEndpointBase='https://mockapp.giftbit.com'
-        kiind.webEndpointBase='https://mockapp.giftbit.com'
-    }
-
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
