@@ -29,6 +29,12 @@ environments {
         kiind.webEndpointBase='https://testbedapp.giftbit.com'
     }
 
+
+    preprod {
+        kiind.apiEndpointBase='https://preprodapp.giftbit.com'
+        kiind.webEndpointBase='https://preprodapp.giftbit.com'
+    }
+
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
